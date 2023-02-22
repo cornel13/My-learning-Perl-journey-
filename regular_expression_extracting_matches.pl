@@ -3,12 +3,14 @@ use warnings;
 use strict;
 use Data::Dumper;
 
+{
+my $time = localtime();
+print $time, "\n";
+print ("$1 \n") if($time =~ /(\d\d:\d\d:\d\d)/);
+}
+print("\n");
 
-# my $time = localtime();
-# print $time, "\n";
-# print ("$1 \n") if($time =~ /(\d\d:\d\d:\d\d)/);
-
-#######
+#The following example demonstrates how to extract data from text.
 my $text = <<END;
 name: Antonio Vivaldi, period: 1678-1741
 name: Andrea Zani,period: 1696-1757

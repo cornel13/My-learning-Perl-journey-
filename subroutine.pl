@@ -2,22 +2,25 @@
 use warnings;
 use strict;
 
-# sub say_something{
-#      print "Hi, this is the first subroutine\n";
-# }
-# say_something();
+{
+sub say_something{
+     print "Hi, this is the first subroutine\n";
+}
+say_something();
+}
 
 ###################The following example demonstrates how to use argument lists in the subroutine:
-# print &sum(1..10), "\n";
-#
-# sub sum{
-#     my $total = 0;
-#     for my $i(@_){
-#         $total += $i;
-#     }
-#     return $total;
-# }
+{
+print &sum(1..10), "\n";
 
+sub sum{
+    my $total = 0;
+    for my $i(@_){
+        $total += $i;
+    }
+    return $total;
+}
+}
 
 #################A subroutine implicitly returns a value that is the result of the last expression in its body
 # print &say_hi , "\n";
@@ -36,6 +39,7 @@ use strict;
 
 
 ####################### For example, a subroutine may return an undefined value undef when a particular parameter is not supplied as the following example:
+{
 my @a = ();
 my $j = min(@a);
 
@@ -61,4 +65,5 @@ sub min{
       $m = $_ if $m > $_;
    }
    return $m;
+}
 }
