@@ -23,20 +23,21 @@ sub sum{
 }
 
 #################A subroutine implicitly returns a value that is the result of the last expression in its body
-# print &say_hi , "\n";
-# sub say_hi{
-#     my $name = 'Bob';
-#     print "Hi $name \n";
-#     $name;
-# }
-#or
-# print &say_hi , "\n";
-# sub say_hi{
-#     my $name = 'Bob';
-#     print "Hi $name \n";
-#     return $name;
-# }
-
+{
+print &say_hi , "\n";
+sub say_hi{
+    my $name = 'Bob';
+    print "Hi $name \n";
+    $name;
+}
+#Explicit returning value with return statement
+print &say_hi , "\n";
+sub say_hi{
+    my $name = 'Bob';
+    print "Hi $name \n";
+    return $name;
+}
+}
 
 ####################### For example, a subroutine may return an undefined value undef when a particular parameter is not supplied as the following example:
 {
